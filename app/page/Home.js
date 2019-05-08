@@ -1,6 +1,8 @@
 import React, {Component} from "react";
-import {ActivityIndicator, FlatList, StyleSheet, Text, View, Image} from "react-native";
+import {ActivityIndicator, FlatList, Image, Text, View} from "react-native";
+
 import constant from "../common/Constant";
+import styles from '../style/HomeStyle';
 
 const REQUEST_URL = 'https://api.github.com/search/repositories?q=javascript&sort=stars&page=';
 let pageNo = 1;//当前第几页
@@ -101,7 +103,7 @@ class Home extends Component {
         return (
             <View style={styles.itemBox}>
                 <View style={styles.leftArea}>
-                    <Image style={styles.avatar} source={{uri: item.value.owner.avatar_url}} />
+                    <Image style={styles.avatar} source={{uri: item.value.owner.avatar_url}}/>
                 </View>
                 <View style={styles.rightArea}>
                     <Text style={styles.title} onPress={() => {
@@ -197,45 +199,5 @@ class Home extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    itemBox: {
-        flex: 1,
-        flexDirection: 'row',
-        paddingTop: 8,
-        paddingBottom: 8,
-        paddingLeft: 6,
-        paddingRight: 6,
-    },
-    leftArea: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    avatar: {
-        width: 40,
-        height: 40,
-    },
-    rightArea: {
-        flex: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    title: {
-        fontSize: 15,
-        color: 'blue',
-    },
-    desc: {
-        fontSize: 15,
-        color: 'black',
-    },
-
-});
 
 module.exports = Home;

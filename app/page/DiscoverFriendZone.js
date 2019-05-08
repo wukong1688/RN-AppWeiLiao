@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import {StatusBar, StyleSheet, View,} from 'react-native';
-import constant from "../common/Constant";
+import {StatusBar, View,} from 'react-native';
 
-class FriendZone extends Component {
+import constant from "../common/Constant";
+import styles from '../style/DetailStyle';
+
+class DiscoverFriendZone extends Component {
 
     static navigationOptions = ({navigation, screenProps}) => ({
         url: navigation.state.params.url,
@@ -30,21 +32,4 @@ class FriendZone extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    button: {
-        width: 120,
-        height: 45,
-        borderRadius: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#4398ff',
-    }
-});
-
-module.exports = FriendZone;
+module.exports = DiscoverFriendZone;

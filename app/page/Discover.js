@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity, Image, ScrollView,
-} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, View,} from 'react-native';
+
 import constant from "../common/Constant";
+import icon_right from '../res/icon_right.png';
+import ic_menu_star from '../res/ic_menu_star.png';
+import ic_image_praise from '../res/ic_image_praise.png';
 
 class Discover extends Component {
 
@@ -14,38 +13,22 @@ class Discover extends Component {
             <View style={styles.container}>
 
                 <ScrollView>
-                    <View style={styles.aboutAuthor}>
-                        <Image source={require('../res/ic_menu_star.png')} style={styles.leftIcon}/>
-                        <Text style={styles.title}
-                              onPress={() => {
-                                  this.props.navigation.navigate('FriendZone', {
-                                      title: constant.stringFriend,
-                                  })
-                              }}>朋友圈</Text>
-                        <Image source={require('../res/icon_right.png')} style={styles.rightIcon}
-                               onPress={() => {
-                                   this.props.navigation.navigate('FriendZone', {
-                                       title: constant.stringFriend,
-                                   })
-                               }}
-                        />
-                    </View>
+                    <TouchableOpacity activeOpacity={0.8} style={styles.rowArea} onPress={() => {
+                        this.props.navigation.navigate('DiscoverFriendZone', {title: constant.stringFriend})
+                    }}>
+                        <Image source={ic_menu_star} style={styles.leftIcon}/>
+                        <Text style={styles.title}>朋友圈</Text>
+                        <Image source={icon_right} style={styles.rightIcon}/>
+                    </TouchableOpacity>
 
-                    <View style={styles.aboutAuthor}>
-                        <Image source={require('../res/ic_image_praise.png')} style={styles.leftIcon}/>
-                        <Text style={styles.title} onPress={() => {
-                            this.props.navigation.navigate('FriendZone', {
-                                title: constant.stringFriend,
-                            })
-                        }}>看一看</Text>
-                        <Image source={require('../res/icon_right.png')} style={styles.rightIcon}
-                               onPress={() => {
-                                   this.props.navigation.navigate('FriendZone', {
-                                       title: constant.stringFriend,
-                                   })
-                               }}
-                        />
-                    </View>
+                    <TouchableOpacity activeOpacity={0.8} style={styles.rowArea} onPress={() => {
+                        this.props.navigation.navigate('DiscoverNews', {title: constant.stringNews})
+                    }}>
+                        <Image source={ic_image_praise} style={styles.leftIcon}/>
+                        <Text style={styles.title}>看一看</Text>
+                        <Image source={icon_right} style={styles.rightIcon}/>
+                    </TouchableOpacity>
+
                 </ScrollView>
             </View>
         );
@@ -67,7 +50,7 @@ const styles = StyleSheet.create({
         height: 160,
         backgroundColor: '#fff',
     },
-    aboutAuthor: {
+    rowArea: {
         flex: 1,
         marginTop: 16,
         paddingLeft: 10,

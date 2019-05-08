@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, WebView, StatusBar} from 'react-native';
+import {StatusBar, View, WebView} from 'react-native';
 
 import constant from '../common/Constant';
-
-//屏幕信息
-var dimensions = require('Dimensions');
-//获取屏幕的宽度和高度
-var {width, height} = dimensions.get('window');
+import styles from '../style/DetailStyle';
 
 /**
  * 关于我们
@@ -47,24 +43,3 @@ export default class AboutUs extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    headerTitleStyle: {
-        color: 'white',
-        //设置标题的大小
-        fontSize: 18,
-        //居中显示
-        alignSelf: 'center',
-    },
-    web: {
-        height: height,
-        width: width,
-        backgroundColor: '#F5FCFF'
-    }
-
-});
