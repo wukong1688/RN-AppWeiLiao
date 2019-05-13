@@ -64,7 +64,7 @@ const Tab = createMaterialTopTabNavigator({
         }
     },
 }, {
-    initialRouteName: 'Mine',
+    //initialRouteName: 'Mine',
     swipeEnabled: true,
     animationEnabled: true,
     backBehavior: 'none', // 按 back 键是否跳转到第一个 Tab， none 为不跳转
